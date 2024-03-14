@@ -1,0 +1,341 @@
+﻿<Window xmlns:SearchComponent="clr-namespace:Utify.View.Usercontrols.SearchComponent"  x:Class="Utify.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Utify" xmlns:vlc="clr-namespace:LibVLCSharp.WPF;assembly=LibVLCSharp.WPF"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Initialized="WindowInitialized"
+        AllowsTransparency="true"
+        Height="800" Width="1400"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource Normal15Brush}">
+    
+    <!--TODO : put in the resources-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="{Binding MenuBarHeight, FallbackValue=30}"
+                      ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid Name="View">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Toolbar -->
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="99"
+                BorderThickness="0, 0, 0, 2"
+                BorderBrush="{StaticResource ContrastDimBrush}"/>
+        <Grid Name="ContentTop"
+              Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="99">
+            <!-- Buttons -->
+            <StackPanel Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0, 0, 5, 0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Label Content="___"
+                       Style="{StaticResource ButtonDefault}"/>
+                <Label Content="[ ]"
+                       Style="{StaticResource ButtonDefault}"/>
+                <Label Content="X"
+                       Style="{StaticResource ButtonDefault}"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Side content -->
+        <Grid Name="ContentLeft"
+              Grid.Row="1"
+              Grid.Column="0">
+            <!-- https://www.omnicalculator.com/other/resolution-scale 5.36%  -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <!-- Plus the additional 4 for the borders. -->
+                <!--<RowDefinition Height="145"/>-->
+                <RowDefinition Height="145"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Margin="10">
+                
+                <!-- Online -->
+                <StackPanel>
+                    <Label Content="Online"
+                           FontSize="15"
+                           Foreground="{StaticResource ContrastBrightBrush}"/>
+                    <Label Name="Search"
+                           Content=" Search"
+                           Style="{StaticResource ButtonDefault}"/>
+                </StackPanel>
+                
+                <!-- Local -->
+                <StackPanel Margin="0, 20">
+                    <Label Content="Local"
+                           FontSize="15"
+                           Foreground="{StaticResource ContrastBrightBrush}"/>
+                    <Label Name="Search2"
+                           Content=" Library"
+                           Style="{StaticResource ButtonDefault}"/>
+                    <Label Name="Search3"
+                           Content=" Playlists"
+                           Style="{StaticResource ButtonDefault}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Backdrop Queue --><!--
+            <Rectangle Grid.Row="1"
+                       Opacity="0.5"
+                       Fill="{StaticResource Normal20Brush}"/>-->
+
+            <!-- Bars --><!--
+            <Border Grid.Row="1"
+                    BorderThickness="0, 0, 0, 0"
+                    BorderBrush="{StaticResource ContrastDimBrush}"/>-->
+
+            <!-- Queue songs --><!--
+            <ScrollViewer Grid.Row="1"
+                          VerticalScrollBarVisibility="Hidden"
+                          HorizontalScrollBarVisibility="Disabled">
+                <StackPanel Name="StackPanelQueue"
+                            Orientation="Vertical"/>
+            </ScrollViewer>-->
+
+            <!-- Backdrop Thumbnail -->
+            <Rectangle Grid.Row="2"
+                       Fill="Black"/>
+            
+            <!-- Thumbnail -->
+            <Image Name="ImageThumbnail"
+                   Grid.Row="2"
+                   Stretch="UniformToFill"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            
+            <!-- Bars -->
+            <Border Grid.Row="2"
+                    BorderThickness="0, 2"
+                    BorderBrush="{StaticResource ContrastDimBrush}"/>
+            
+            <!-- Video -->
+            <vlc:VideoView Name="VideoView"
+                           Grid.Row="2"
+                           BorderThickness="0, 2"
+                           BorderBrush="{StaticResource ContrastDimBrush}"/>
+        </Grid>
+        
+        <!-- Video information -->
+        <TextBlock Name="VideoInfo"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   Margin="5"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="{StaticResource ContrastBrightBrush}"/>
+
+        <!-- Video controls -->
+        <Grid Name="ContentDown"
+              Grid.Row="3"
+              Grid.Column="1"
+              Grid.ColumnSpan="99">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Video controls -->
+            <StackPanel Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Center">
+                <Image Source="/Resources/Shuffle.png"
+                        Name="ImageShuffle"
+                        MouseDown="ImageShuffleMouseDown"/>
+                <Image Source="/Resources/SkipLeft.png"
+                        Name="ImageSkipLeft"
+                        MouseDown="ImageSkipLeftMouseDown"/>
+                <Image Source="/Resources/PlayRound.png"
+                        Name="ImagePlay"
+                        MouseDown="ImagePlayMouseDown"/>
+                <Image Source="/Resources/SkipRight.png"
+                        Name="ImageSkipRight"
+                        MouseDown="ImageSkipRightMouseDown"/>
+                <Image Source="/Resources/Repeat.png"
+                        Name="ImageRepeat"
+                        MouseDown="ImageRepeatMouseDown"/>
+                <!--Styles-->
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Style.Resources>
+                            <Style TargetType="Image">
+                                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
+                                <Setter Property="RenderOptions.EdgeMode" Value="Aliased" />
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="Width" Value="28" />
+                                <Setter Property="Margin" Value="12, 0" />
+                            </Style>
+                        </Style.Resources>
+                    </Style>
+                </StackPanel.Style>
+            </StackPanel>
+                
+            <!-- Time controls -->
+            <Grid Grid.Row="1"
+                  Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="0.15*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Time left -->
+                <Label Name="LabelTimeLeft"
+                       Grid.Column="1"
+                       FontSize="12"
+                       Content="00:00"
+                       Margin="0, -1, 5, 1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Foreground="{StaticResource ContrastBrightBrush}"/>
+
+                <!-- Timebar -->
+                <Rectangle Name="TimebarBack"
+                           Grid.Column="2"
+                           Height="10"
+                           RadiusX="4"
+                           RadiusY="4"
+                           Cursor="Hand"
+                           MouseUp="TimebarMouseUp"
+                           MouseDown="TimerbarMouseDown"
+                           MouseMove="TimerbarMouseMove"
+                           Fill="{StaticResource Normal25Brush}"/>
+                <Rectangle Name="TimebarBuffering"
+                            Grid.Column="2"
+                            Width="0"
+                            Height="10"
+                            RadiusX="4"
+                            RadiusY="4"
+                            Cursor="Hand"
+                            HorizontalAlignment="Left"
+                            MouseUp="TimebarMouseUp"
+                            MouseDown="TimerbarMouseDown"
+                            MouseMove="TimerbarMouseMove"
+                            Fill="{StaticResource Normal30Brush}"/>
+                <Rectangle Name="TimebarFront"
+                           Grid.Column="2"
+                           Width="0"
+                           Height="10"
+                           RadiusX="4"
+                           RadiusY="4"
+                           Cursor="Hand"
+                           HorizontalAlignment="Left"
+                           MouseUp="TimebarMouseUp"
+                           MouseDown="TimerbarMouseDown"
+                           MouseMove="TimerbarMouseMove"
+                           Fill="{StaticResource ContrastDimBrush}"/>
+
+                <!-- Time right -->
+                <Label Name="LabelTimeRight"
+                       Grid.Column="3"
+                       FontSize="12"
+                       Content="00:00"
+                       Margin="5, -2, 0, 1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Foreground="{StaticResource ContrastBrightBrush}"/>
+            </Grid>
+                    
+            <!-- Volume controls -->
+            <Grid Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="0, 0, 11, 0"
+                  VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="28"/>
+                    <ColumnDefinition Width="28"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Image-->
+                <Image Name="ImageAudio"
+                       Grid.Column="0"
+                       Cursor="Hand"
+                       Source="/Resources/Music.png"
+                       MouseDown="ImageAudioMouseDown"/>
+
+                <!--Image-->
+                <Image Name="ImageVolume"
+                       Grid.Column="1"
+                       Cursor="Hand"
+                       MouseDown="ImageVolumeMouseDown"
+                       Source="/Resources/VolumeMiddle.png"/>
+
+                <!--Volumebar-->
+                <Rectangle Grid.Column="2"
+                           Height="10"
+                           RadiusX="4"
+                           RadiusY="4"
+                           Cursor="Hand"
+                           Name="VolumebarBack"
+                           MouseUp="VolumebarMouseUp"
+                           MouseDown="VolumebarMouseDown"
+                           MouseMove="VolumebarMouseMove"
+                           Fill="{StaticResource Normal30Brush}"/>
+                <Rectangle Grid.Column="2"
+                           Height="10"
+                           Width="0"
+                           RadiusX="4"
+                           RadiusY="4"
+                           Cursor="Hand"
+                           Name="VolumebarFront"
+                           HorizontalAlignment="Left"
+                           MouseUp="VolumebarMouseUp"
+                           MouseDown="VolumebarMouseDown"
+                           MouseMove="VolumebarMouseMove"
+                           Fill="{StaticResource Normal25Brush}"/>
+                <Rectangle Grid.Column="2"
+                           Height="10"
+                           Width="0"
+                           RadiusX="4"
+                           RadiusY="4"
+                           Cursor="Hand"
+                           Name="VolumebarVisualize"
+                           HorizontalAlignment="Left"
+                           MouseUp="VolumebarMouseUp"
+                           MouseDown="VolumebarMouseDown"
+                           MouseMove="VolumebarMouseMove"
+                           Fill="{StaticResource SuccessBrush}"/>
+            </Grid>
+        </Grid>
+
+        <Border Name="Content"
+                Grid.Row="1"
+                Grid.Column="1"
+                Padding="10"
+                Background="{StaticResource Normal20Brush}">
+            <SearchComponent:UserControlSearch />
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Application x:Class="Utify.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Utify"
+             StartupUri="View/Windows/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="View/Styles/Colors.xaml" />
+                <ResourceDictionary Source="View/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="View/Styles/TextBoxes.xaml" />
+                <ResourceDictionary Source="View/Styles/Inputs.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

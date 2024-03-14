@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--<Style x:Key="BaseInputBox" TargetType="Control">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource ContrastDimBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Control">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="0, 0, 0, 1"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      Focusable="false"
+                                      VerticalScrollBarVisibility="Hidden"
+                                      HorizontalScrollBarVisibility="Hidden" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TextBox.CaretBrush" Value="{StaticResource ContrastBrightBrush}" />
+    </Style>
+
+    <Style x:Key="BasePasswordBox"
+           TargetType="PasswordBox"
+           BasedOn="{StaticResource BaseInputBox}"/>
+
+    <Style x:Key="BaseTextBox"
+           TargetType="TextBox"
+           BasedOn="{StaticResource BaseInputBox}"/>-->
+
+</ResourceDictionary>

@@ -1,0 +1,50 @@
+﻿<contextitem:BaseContextItem xmlns:contextitem="clr-namespace:Utify.View.Usercontrols.ContextComponent"
+                             x:Class="Utify.View.Usercontrols.ContextComponent.UserControlContextItem"
+                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                             xmlns:local="clr-namespace:Utify.View.Usercontrols.ContextComponent"
+                             mc:Ignorable="d"
+                             Background="Transparent"
+                             Initialized="UserControlInitialized">
+    <Border Name="Border"
+            Padding="5"
+            Cursor="Hand"
+            MouseDown="BorderMouseDown"
+            MouseEnter="BorderMouseEnter">
+        <Border.Style>
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="{StaticResource Normal15Brush}" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="{StaticResource Normal20Brush}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                   Name="LabelItem"
+                   Padding="2, 0, 0, 0"
+                   Margin="0, 0, 50, 0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="{StaticResource ContrastBrightBrush}" />
+            <Label Grid.Column="2"
+                   Name="LabelMore"
+                   Content=">"
+                   Padding="0"
+                   Margin="0, 0, 5, 0"
+                   Visibility="Hidden"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="{StaticResource ContrastBrightBrush}" />
+        </Grid>
+    </Border>
+</contextitem:BaseContextItem>

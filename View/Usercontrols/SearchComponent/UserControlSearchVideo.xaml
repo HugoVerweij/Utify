@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Utify.View.Usercontrols.SearchComponent.UserControlSearchVideo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Utify.View.Usercontrols.SearchComponent"
+             mc:Ignorable="d"
+             Margin="5"
+             Width="177.5"
+             Height="187"
+             Cursor="Hand"
+             Name="UserControlSearchVideoContent"
+             MouseDown="UserControlMouseDown"
+             Initialized="UserControlInitialized">
+    <Grid Name="GridTest">
+        <!-- Background -->
+        <Rectangle RadiusX="15"
+                   RadiusY="15"
+                   Fill="{StaticResource Normal15Brush}" />
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="87" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.7*" />
+            </Grid.RowDefinitions>
+            
+            <!-- Thumbnail -->
+            <Border Grid.Row="0"
+                    CornerRadius="15">
+                <Border.Background>
+                    <ImageBrush x:Name="ImageThumbnail"
+                                Stretch="UniformToFill"/>
+                </Border.Background>
+            </Border>
+
+            <!-- Duration -->
+            <Border Name="BorderDurationBack"
+                    Grid.Row="0"
+                    Margin="10"
+                    Opacity="0.5"
+                    Width="{Binding ActualWidth, ElementName=BorderDurationFront}"
+                    Height="{Binding ActualHeight, ElementName=BorderDurationFront}"
+                    Background="Black"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"/>
+            <!-- Overlay to ignore opacity -->
+            <Border Name="BorderDurationFront"
+                    Grid.Row="0"
+                    Margin="10"
+                    Width="auto"
+                    Height="auto"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right">
+                <TextBlock Name="TextBlockDuration"
+                           Margin="5, 3"
+                           FontSize="12"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="{StaticResource ContrastBrightBrush}"/>
+            </Border>
+
+            <!-- Information -->
+            <Label Grid.Row="1"
+                   Name="LabelAuthor"
+                   Margin="2, 0, 0, 0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="{StaticResource ContrastDimBrush}"/>
+            <TextBlock Grid.Row="2"
+                       Name="TextBlockTitle"
+                       TextWrapping="Wrap"
+                       TextAlignment="Left"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="{StaticResource ContrastBrightBrush}"/>
+        </Grid>
+    </Grid>
+</UserControl>

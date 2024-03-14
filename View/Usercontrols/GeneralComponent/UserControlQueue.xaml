@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Utify.View.Usercontrols.GeneralComponent.UserControlQueue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Utify.View.Usercontrols.GeneralComponent"
+             mc:Ignorable="d"
+             Width="auto" Height="27"
+             d:DesignWidth="145"
+             Initialized="UserControlInitialized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*" />
+            <ColumnDefinition Width="0.3*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Name="LabelTitle"
+               Grid.Column="0"
+               Margin="0, 0, 0, 0"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left"
+               Foreground="{StaticResource ContrastBrightBrush}"/>
+
+        <Label Name="LabelDuration"
+               Grid.Column="1"
+               Margin="0, 0, 0, 0"
+               VerticalAlignment="Center"
+               HorizontalAlignment="right"
+               Foreground="{StaticResource ContrastBrightBrush}"/>
+    </Grid>
+</UserControl>

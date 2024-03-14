@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Utify.View.Usercontrols.SearchComponent.UserControlSearchChannelVideo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Utify.View.Usercontrols.SearchComponent"
+             mc:Ignorable="d"
+             Initialized="UserControlInitialized"
+             Width="auto" Height="55"
+             d:DesignHeight="55" d:DesignWidth="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Name="LabelTitle"
+               Grid.Row="0"
+               Grid.Column="0"
+               Content="Shelter"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Left"
+               Foreground="{StaticResource ContrastBrightBrush}"/>
+
+        <Label Name="LabelInfo"
+               Grid.Row="1"
+               Grid.Column="0"
+               FontSize="10"
+               Content="75M views • 6 years ago"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Foreground="{StaticResource ContrastDimBrush}"/>
+
+        <Label Name="LabelDuration"
+               Grid.Row="0"
+               Grid.Column="1"
+               Grid.RowSpan="99"
+               Content="4:54"
+               Margin="0, 0, 10, 0"
+               VerticalAlignment="Center"
+               HorizontalAlignment="right"
+               Foreground="{StaticResource ContrastBrightBrush}"/>
+
+        <Border Grid.Row="1"
+                Margin="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="99"
+                BorderThickness="0, 0, 0, 1"
+                BorderBrush="{StaticResource Normal15Brush}"/>
+    </Grid>
+</UserControl>

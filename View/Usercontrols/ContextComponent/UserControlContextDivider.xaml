@@ -1,0 +1,13 @@
+﻿<contextitem:BaseContextItem xmlns:contextitem="clr-namespace:Utify.View.Usercontrols.ContextComponent"
+                             x:Class="Utify.View.Usercontrols.ContextComponent.UserControlContextDivider"
+                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                             xmlns:local="clr-namespace:Utify.View.Usercontrols.ContextComponent"
+                             Background="Transparent"
+                             Height="auto" Width="auto">
+    <Border Margin="0, 1"
+            BorderThickness="0, 0, 0, 1"
+            BorderBrush="{StaticResource ContrastBrightBrush}"/>
+</contextitem:BaseContextItem>

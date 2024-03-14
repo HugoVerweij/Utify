@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--https://www.w3schools.com/colors/colors_picker.asp-->
+
+    <!--Normals-->
+
+    <Color x:Key="Normal30">#404159</Color>
+    <!--30%-->
+    <SolidColorBrush x:Key="Normal30Brush" Color="{StaticResource Normal30}" />
+
+    <Color x:Key="Normal25">#36374a</Color>
+    <!--25%-->
+    <SolidColorBrush x:Key="Normal25Brush" Color="{StaticResource Normal25}" />
+
+    <Color x:Key="Normal20">#2b2c3b</Color>
+    <!--20%-->
+    <SolidColorBrush x:Key="Normal20Brush" Color="{StaticResource Normal20}" />
+
+    <Color x:Key="Normal15">#20212c</Color>
+    <!--15%-->
+    <SolidColorBrush x:Key="Normal15Brush" Color="{StaticResource Normal15}" />
+
+    <!--Highlights-->
+
+    <Color x:Key="ContrastBright">white</Color>
+    <SolidColorBrush x:Key="ContrastBrightBrush" Color="{StaticResource ContrastBright}" />
+
+    <Color x:Key="ContrastDim">silver</Color>
+    <SolidColorBrush x:Key="ContrastDimBrush" Color="{StaticResource ContrastDim}" />
+
+    <!--Success & Failure-->
+
+    <Color x:Key="Success">SeaGreen</Color>
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource Success}" />
+
+    <Color x:Key="Failure">Firebrick</Color>
+    <SolidColorBrush x:Key="FailureBrush" Color="{StaticResource Failure}" />
+
+</ResourceDictionary>
