@@ -35,7 +35,7 @@ Utify heeft meerdere versies en diverse functionaliteiten.
 * Context menu met behulp van polymorfisme en usercontrols.
 
 > [!IMPORTANT]
-> Niet alle functionaliteiten zijn binnen de huidige versie verwerkt, maar de fundatie is al gelegd.
+> Niet alle functionaliteiten zijn binnen de huidige versie verwerkt, maar de fundatie is gelegd.
 
 ## Demonstratie
 https://github.com/HugoVerweij/Utify/assets/163334632/2930249a-7762-449e-9f0e-8684b2dad830
