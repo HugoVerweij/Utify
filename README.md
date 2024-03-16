@@ -31,11 +31,11 @@ Utify heeft meerdere versies en diverse functionaliteiten.
 
 ### Miscellaneous
 * Combinatie van AES encryption en XML om data lokaal op te slaan.
-* Integratie met een zelf ontworpen auto-updater voor vrienden.
+* Integratie met een zelfontworpen  auto-updater voor vrienden.
 * Context menu met behulp van polymorfisme en usercontrols.
 
 > [!IMPORTANT]
-> Niet alle functionaliteiten zijn binnen de huidige versie verwerkt, maar de fundatie is al gelged.
+> Niet alle functionaliteiten zijn binnen de huidige versie verwerkt, maar de fundatie is al gelegd.
 
 ## Demonstratie
 https://github.com/HugoVerweij/Utify/assets/163334632/2930249a-7762-449e-9f0e-8684b2dad830
