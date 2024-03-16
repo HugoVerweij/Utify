@@ -1,5 +1,5 @@
 # Utify <img src="https://github.com/HugoVerweij/Utify/assets/163334632/a58688c1-9581-4109-af2c-d244ae849db4" width="50" height="50">
- <b>Spotify's front, Youtube's back.</b>
+**Spotify's front, Youtube's back.**
 
 ![image](https://github.com/HugoVerweij/Utify/assets/163334632/3b30af7b-de4a-452e-bd9d-8a2228cede54)
 
@@ -13,23 +13,29 @@ Utify heeft meerdere versies en diverse functionaliteiten.
 
 ### Online (YouTube)
 * Het beluisteren van online nummers.
-* Het opslaan van online nummers.
-* Het downloaden van online nummers.
+* Het opslaan van online nummers.  
+* _Het downloaden van online nummers._
 
 ### Playlists
 * Het maken van nieuwe playlists.
 * Het beluisteren van bestaande en aangemaakte playlists.
-* Het downloaden van de aangemaakte playlists.
+* _Het downloaden van de aangemaakte playlists._
 
 ### Media controls
 * Shuffle of repeat.
-* Controls voor audio.
 * Pauzeren of hervatten.
 * Volgende of vorige nummer.
 * Zoeken/Seeking binnen een nummer.
 * Controls voor live video.
+* Controls voor audio.
+
+### Miscellaneous
+* Combinatie van AES encryption en XML om data lokaal op te slaan.
+* Integratie met een zelf ontworpen auto-updater voor vrienden.
+* Context menu met behulp van polymorfisme en usercontrols.
 
 > [!IMPORTANT]
-> De actuele Utify versie heeft een gedeelte van deze functionaliteiten.
+> Niet alle functionaliteiten zijn binnen de huidige versie verwerkt, maar de fundatie is al gelged.
 
+## Demonstratie
 https://github.com/HugoVerweij/Utify/assets/163334632/2930249a-7762-449e-9f0e-8684b2dad830
